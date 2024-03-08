@@ -4,6 +4,7 @@ var cookieParser = require('cookie-parser');
 
 var infoRouter = require('./routes/info');
 var fundamentalsRouter = require('./routes/fundamentals');
+var asyncawaitRouter = require('./routes/async-await');
 
 var app = express();
 
@@ -14,7 +15,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/info', infoRouter);
 app.use('/fundamentals', fundamentalsRouter);
+app.use('/async-await', asyncawaitRouter);
 
-app.use('*',fundamentalsRouter);
+app.use('*',asyncawaitRouter);
 
 module.exports = app;
